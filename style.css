@@ -1,0 +1,23 @@
+body{
+  background-color: aqua;
+  text-align: center;
+}
+.resultContainer{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap; 
+}
+
+.photoClass{
+  width: 250px;
+  border: black 1px solid;
+  margin: 2px;
+  padding-bottom: 2px;
+  height: 350px;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}

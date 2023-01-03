@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="javascript/anime.min.js"></script>
+    <script src="javascript/script.js" defer></script>
+    <title>Search image</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="h1Animation">Sök bild!</h1>
+    </header>
+    <main>
+      <form action="" class="search">
+        <label for="search">Sök</label>
+        <input type="search" name="search" placeholder="Cats" id="userSearch" required />
+        <label for="imageamount">Hur många bilder</label>
+        <select name="imageamount" id="imageamount">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+        </select>
+        <label for="size">Storlek på bilderna</label>
+        <select name="size" id="size">
+          <option value="3">Liten</option>
+          <option value="6">Mellan</option>
+          <option value="8">Stor</option>
+        </select>
+        <label for="sorting">Sortera bilderna</label>
+        <select name="sorting" id="sorting">
+          <option value="date-posted-asc">Se dom senast upplagda bilderna först</option>
+          <option value="date-posted-desc">Se dom äldsta upplagda bilderna först</option>
+          <option value="date-taken-asc">Se dom senast tagna bilderna först</option>
+          <option value="date-taken-desc">Se dom äldsta tagna bilderna först</option>
+          <option value="interestingness-desc">Se dom mest intressanta bilderna först</option>
+          <option value="interestingness-asc">Se dom minst intressanta bilderna först</option>
+          <option value="relevance">Se dom mest relevanta bilderna först</option>
+        </select>
+        <button>sök</button>
+      </form>
+      <div class="resultContainer">
+
+      </div>
+    </main>
+  </body>
+</html>
