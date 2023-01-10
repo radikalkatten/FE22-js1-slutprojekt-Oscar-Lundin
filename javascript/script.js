@@ -32,7 +32,19 @@ button.addEventListener('click', (event)=>{
       throw 'fetch failed'
     }
   }
-  ).then((data)=> {
+  ).then((data)=>{
+    if(data.photos.photo.length == 0){
+      let noImage = document.createElement('h1')
+      noImage.innerText = "Ingen bild kunde hittas."
+      resultContainer.appendChild(noImage)
+      throw 'no image found'
+
+    }
+    else{
+      return data
+    }
+  })
+  .then((data)=> {
     for(let i = 0; i < data.photos.photo.length; i++){
       let photoURL = `https://www.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=347a72743edd22fabc20b07c1e95bc92&photo_id=${data.photos.photo[i].id}&format=json&nojsoncallback=1`
       fetch(photoURL).then((response) => {if(response.status >= 200 && response.status < 300){
@@ -62,6 +74,6 @@ button.addEventListener('click', (event)=>{
   console.log(error)
   let errorMessage = document.createElement('h1')
   resultContainer.appendChild(errorMessage)
-  errorMessage.innerText = "Felaktig sökning. Försök igen"
+  errorMessage.innerText = "Felaktig sökning."
 })
 })
